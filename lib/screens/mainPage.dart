@@ -75,7 +75,61 @@ class _MainPageViewState extends State<MainPageView> {
               },
               child: Text('valide'.tr),
             ),
-          )
+          ),
+          Container(
+            width: double.infinity,
+            height: 56,
+            padding: EdgeInsets.fromLTRB(56, 16, 56, 0),
+            child: ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.teal,
+                onPrimary: Colors.white,
+                shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8))),
+              ),
+              onPressed: () {
+                Get.updateLocale(Locale('fr'));
+              },
+              label: Text("Changer FR "),
+              icon: Icon(Icons.g_translate_outlined),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            height: 56,
+            padding: EdgeInsets.fromLTRB(56, 16, 56, 0),
+            child: ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.teal,
+                onPrimary: Colors.white,
+                shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8))),
+              ),
+              onPressed: () {
+                Get.updateLocale(Locale('en'));
+              },
+              label: Text("Changer en "),
+              icon: Icon(Icons.g_translate_outlined),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            height: 56,
+            padding: EdgeInsets.fromLTRB(56, 16, 56, 0),
+            child: ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.teal,
+                onPrimary: Colors.white,
+                shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8))),
+              ),
+              onPressed: () {
+                Get.updateLocale(Locale('ar'));
+              },
+              label: Text("Changer ar "),
+              icon: Icon(Icons.g_translate_outlined),
+            ),
+          ),
         ],
       ),
     );
