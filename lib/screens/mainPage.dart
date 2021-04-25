@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:getx_application/screens/SommePage.dart';
 
 class MainPAge extends StatelessWidget {
   @override
@@ -17,14 +19,23 @@ class MainPageView extends StatefulWidget {
 
 class _MainPageViewState extends State<MainPageView> {
   final TextEditingController emailcontroller = TextEditingController();
+  GetStorage box = GetStorage();
+
   @override
   Widget build(BuildContext context) {
+    box.writeIfNull("email", "test email");
+    print(box.read("email"));
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('title'.tr),
+        title: Text('title'.trArgs([box.read('email').toString()])),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          box.write("email", emailcontroller.text);
+          Get.toNamed('/SommePage');
+          //Get.to(() => SommePage());
+        },
         label: Text('next'.tr),
         backgroundColor: Colors.amberAccent,
         foregroundColor: Colors.black,
